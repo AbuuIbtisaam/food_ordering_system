@@ -7,77 +7,7 @@
         {% include 'user_navbar.html' %}        
     </header>
     <h1 class="text-warning text-center my-5">Hi, {{user.username}}<br/>Welcome to your Dashboard </h1>  
-    <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-center" style="color: green;">Total Number of Debtors</h5>
-                    <hr>
-                    <p class="card-text d-flex justify-content-center">
-                        <strong>{{ total_debtors }}&nbsp;</strong> Currently recorded debtors.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-center" style="color: green;">Total Number of Debits</h5>
-                    <hr>
-                    <p class="card-text d-flex justify-content-center">
-                        <strong>{{ total_debits }}&nbsp;</strong> Debits have been made.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-center" style="color: green;">Total Number of Pending Debits</h5>
-                    <hr>
-                    <p class="card-text d-flex justify-content-center">
-                        <strong>{{ pending_debits }}&nbsp;</strong> Debits pending.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-center" style="color: green;">Total Number of Currency in Use</h5>
-                    <hr>
-                    <p class="card-text d-flex justify-content-center">
-                        <strong>{{ total_currency }}&nbsp;</strong> Different currencies recorded.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-center" style="color: green;">Total Number of paid debits</h5>
-                    <hr>
-                    <p class="card-text d-flex justify-content-center">
-                        <strong>{{ paid_debits }}&nbsp;</strong> Total number of paid debits.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-center" style="color: green;">Total Number of cancelled debits</h5>
-                    <hr>
-                    <p class="card-text d-flex justify-content-center">
-                        <strong>{{ cancelled_debits }}&nbsp;</strong> Total number of cancelled/forgiven debits.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    
     <div class="mt-5"></div>
     
 {% endblock content %}

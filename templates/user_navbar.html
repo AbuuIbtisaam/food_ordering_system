@@ -40,7 +40,7 @@
   class="py-2 row navbar navbar-expand-lg bg-success navbar-dark text-light"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}">BREAVERS AUTO LTD</a>
+    <a class="navbar-brand" href="{% url 'home' %}">EatWithJoy</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -53,33 +53,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a href="{% url 'debtors_list' %}" class="nav-link">Debtors</a>
-        </li>
-        <li class="nav-item">
-          <a href="{% url 'credits_list' %}" class="nav-link">Credits</a>
-        </li>
-        <li class="nav-item">
-          <a href="{% url 'debts_list' %}" class="nav-link">Debts</a>
-        </li>
-        <li class="nav-item">
-          <a href="{% url 'creditors_list' %}" class="nav-link">Creditors</a>
-        </li>       
-        <li class="nav-item">
-          {% comment %} <a href="{% url 'summary_report' %}" class="nav-link">Report</a> {% endcomment %}
-          <a onclick="reportAlert()" href="#" class="nav-link">Report</a>
-        </li>
-        {% comment %}
-        <li class="nav-item">
-          <a href="{% url 'debt_status_list' %}" class="nav-link"
-            >Debt Status</a
-          >
-        </li>
-        {% endcomment %}
+        </li>      
         <li class="dropdown text-light d-block d-lg-none">
           <a href="#" data-bs-toggle="dropdown" class="nav-link">Profile</a>
           <ul class="dropdown-menu dropdown-menu-end">

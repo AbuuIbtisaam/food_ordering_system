@@ -1,4 +1,4 @@
-# import pytz as pytz
+import pytz as pytz
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
@@ -27,8 +27,8 @@ class CustomUser(AbstractUser):
         help_text="Required",
     )
     # To manage local timezones
-    # timezones = [(tz, tz) for tz in pytz.all_timezones]
-    # time_zone = models.CharField(max_length=100, choices=timezones, default="UTC")
+    timezones = [(tz, tz) for tz in pytz.all_timezones]
+    time_zone = models.CharField(max_length=100, choices=timezones, default="UTC")
 
     def clean(self):
         min_date = date.today() - timedelta(days=13 * 365)  # 13 years ago

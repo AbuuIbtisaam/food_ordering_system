@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="py-2 navbar navbar-expand-lg bg-success navbar-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">BREAVERS AUTO LTD</a>
+      <a class="navbar-brand" href="{% url 'home' %}">EatWithJoy</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -18,7 +18,7 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'dashboard' %}">Debt Management</a>
+            <a class="nav-link" href="{% url 'dashboard' %}">Orders</a>
           </li>          
           <div class="d-block d-lg-none">            
             <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>                                              

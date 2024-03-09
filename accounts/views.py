@@ -11,7 +11,7 @@ from .forms import (
     CustomUserProfileUpdateForm,
     ManageEmailForm,
     ProfilePicUpdateForm,
-    # TimezoneUpdateForm,
+    TimezoneUpdateForm,
 )
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -46,31 +46,11 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy("user_profile")
 
 
-# class DashboardView(LoginRequiredMixin, TemplateView):
-#     template_name = "dashboard.html"
-#     login_url = "login"
+class DashboardView(LoginRequiredMixin, TemplateView):
+    template_name = "dashboard.html"
+    login_url = "login"
 
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         user = self.request.user
-#         context["total_debtors"] = Debtors.objects.filter(user=user).count()
-#         context["total_debits"] = Debts.objects.filter(user=user).count()
-#         context["pending_debits"] = Debts.objects.filter(
-#             user=user,
-#             debt_status="Unpaid",
-#         ).count()
-#         context["paid_debits"] = Debts.objects.filter(
-#             user=user,
-#             debt_status="Paid",
-#         ).count()
-#         context["cancelled_debits"] = Debts.objects.filter(
-#             user=user,
-#             debt_status="forgiven",
-#         ).count()
-#         context["total_currency"] = (
-#             Debts.objects.filter(user=user).values("currency").distinct().count()
-#         )
-#         return context
+    
 
 
 class UserProfileView(LoginRequiredMixin, TemplateView):
@@ -122,11 +102,11 @@ class ProtectedMediaView(LoginRequiredMixin, View):
         return serve(request, path, document_root=media_root)
 
 
-# class TimezoneEditView(LoginRequiredMixin, UpdateView):
-#     model = CustomUser
-#     form_class = TimezoneUpdateForm
-#     template_name = "user_timezone_edit.html"
-#     success_url = reverse_lazy("user_profile")
+class TimezoneEditView(LoginRequiredMixin, UpdateView):
+    model = CustomUser
+    form_class = TimezoneUpdateForm
+    template_name = "user_timezone_edit.html"
+    success_url = reverse_lazy("user_profile")
 
 
 # I commented this out because I don't think it's necessary as it doesn't do anything

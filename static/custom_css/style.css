@@ -71,7 +71,7 @@ ul.m-0{
 }
 
 .home_header{
-    background: linear-gradient( #e309a5ba,#06ef6f71), url(../images/debit_homepicture.jpg) no-repeat top center;       
+    background: linear-gradient( #e309a5ba,#06ef6f71), url(../images/food_landing_page.jpeg) no-repeat top center;       
     min-height: 100vh;   
     padding: 200px 0px; 
     text-align: center;
@@ -79,7 +79,7 @@ ul.m-0{
 }
 
 .home_header_mobile{
-    background: linear-gradient( #e309a5ba,#06ef6f71), url(../images/debit_homepicture_mobile.jpg) no-repeat top center;       
+    background: linear-gradient( #e309a5ba,#06ef6f71), url(../images/food_landing_page.jpeg) no-repeat top center;       
     min-height: 100vh;   
     padding: 200px 0px; 
     text-align: center;

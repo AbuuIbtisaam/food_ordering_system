@@ -83,8 +83,8 @@ class ProfilePicUpdateForm(forms.ModelForm):
         # return cleaned_data
 
 
-# class TimezoneUpdateForm(forms.ModelForm):
-#     class Meta:
-#         model = CustomUser
-#         fields = ("time_zone",)
-#         labels = {"time_zone": "Timezone"}
+class TimezoneUpdateForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ("time_zone",)
+        labels = {"time_zone": "Timezone"}
