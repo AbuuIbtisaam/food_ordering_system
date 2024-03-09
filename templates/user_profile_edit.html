@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Edit Profile {% endblock title %}
+
+{% block content %}
+<header>
+    {% include 'user_navbar.html' %}
+</header>
+<div class="container my-6">
+        <div class="m-auto overflow-hidden border p-4  rounded-3 border-2 border-success col col-md-8 col-lg-6">
+            <div class="bg-success neg-margin px-3 py-2 mb-3 text-light">
+                <h4>Edit Profile</h4>
+            </div>
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row row-cols-lg- row-cols-md-">
+                {{form|crispy}}
+                </div>
+                <button class="btn btn-success" type="submit">Update</button>
+                <a class="btn btn-secondary" href="{% url 'user_profile' %}">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

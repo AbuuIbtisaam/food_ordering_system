@@ -1,0 +1,66 @@
+{% load static %}
+<nav class="py-2 navbar navbar-expand-lg bg-success navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">BREAVERS AUTO LTD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacts</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'dashboard' %}">Debt Management</a>
+          </li>          
+          <div class="d-block d-lg-none">            
+            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>                                              
+          </div>
+        </ul>
+        <div class="text-light dropdown d-none d-lg-block">{{user.username}}
+          <a class="text-decoration-none" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="60,20">
+            <img 
+              src="{% if user.profile_picture %}{{MEDIA_URL}}{{user.profile_picture.url}}{% else %}{% static 'images/male_avater.png' %}{% endif %}" alt="Profile_picture" 
+              width="40" 
+              height="40" 
+              class = "rounded-circle"
+            />
+          </a>
+        
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="{% url 'user_profile' %}">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Report</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="{% url 'password_change' %}">Password Change</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </div>
+        {% else %}              
+        <div class="d-block d-lg-none">          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Sign in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Sign up</a>
+          </li>          
+        </div>
+      </ul>
+      <div class="d-none d-lg-block">        
+          <a class="btn btn-outline-light rounded-pill" href="{% url 'login' %}">Sign in</a>
+          <a class="btn btn-outline-light rounded-pill" href="{% url 'signup' %}">Sign Up</a>                            
+      </div>
+        {% endif %}
+      </div>
+    </div>
+</nav>
+{% comment %} <div class="mb-5 text-center">
+  ...
+</div> {% endcomment %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} SignUp {% endblock title %}
+
+{% block content %}
+<header>
+    {% include 'home_navbar.html' %}
+</header>
+<div class="container my-8 pt-4">
+        <div class="m-auto overflow-hidden border p-4  rounded-3 border-2 border-success col col-md-8 col-lg-6">
+            <div class="bg-success neg-margin px-3 py-2 mb-3 text-light">
+                <h5>Registration</h5>
+            </div>
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row row-cols-lg- row-cols-md-">
+                {{form|crispy}}
+                </div>
+                <button class="btn btn-success" type="submit">Sign Up</button>
+                <p class="mt-2">Already have an account? <a class="text-decoration-none" href="{% url 'login' %}">Sign in</a> </p>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

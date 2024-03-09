@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% if user.is_authenticate %}
+    Hello
+{% endif %}
+{% block title %} login {% endblock title %}
+
+{% block content %}
+<header>
+    {% include 'home_navbar.html' %}
+</header>    
+    <div class="container my-8 pt-5">
+        <div class = "col col-xl-5 mx-auto border border-2 border-success p-4 rounded-3">
+            <div class="bg-success text-light px-3 py-2 neg-margin2 mb-2">
+                <h5>Sign in</h5>
+            </div>
+            <form method="post">{% csrf_token %}                
+                    {{form|crispy}}                
+                <button class="btn btn-success" type="submit">Login</button>
+                <p class="mt-2">Don't you have an account? <a class="text-decoration-none" href="{% url 'signup' %}">Sign up</a> </p>
+                <a class="text-decoration-none" href="{% url 'password_reset' %}">Forgot password?</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

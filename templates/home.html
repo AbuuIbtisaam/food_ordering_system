@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+    <header>
+        {% include 'home_navbar.html' %}
+    </header>
+    
+        <div class="row d-none d-sm-block home_header">            
+            <div class="my-5">
+                <h1 class="text-light">Welcome to <br/>BREAVERS AUTOMATIONS LTD </h1>
+            </div>
+        </div>
+        <div class="row d-block d-sm-none home_header_mobile text-center">            
+            <div class=" my-7">
+                <h1 class="text-light">Welcome to <br/>BREAVERS AUTOMATIONS LTD </h1>
+                {% if user.is_authenticated %}
+                {% else %}
+                <a class="btn btn-info" href="{% url 'login' %}">Sign in</a>
+                <a class="btn btn-warning" href="{% url 'signup' %}">Sign Up</a>
+                {% endif %}
+            </div>
+        </div>                   
+{% endblock content %}

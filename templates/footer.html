@@ -1,0 +1,84 @@
+{% load static %}
+<!-- Our project just needs Font Awesome Free's Solid and Brand files -->
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+<style>
+    .bg-darkblue{
+        background-color:#33339F;
+    }
+</style>
+<!-- Second last bottom-->
+ <div class="row" style="padding: 15px 15px; background-color:#E7C27E;">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-bottom:20px;">
+            
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-5 col-sm-4 col-12 d-none ">  
+                <h5>Useful Links</h5> <hr>
+                    <ul style="list-style:none; padding-left:0px;">
+                            <li>
+                                <a class="text-decoration-none" href="#">Link 1</a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" href="#">Link 2</a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" href="#">Link 3</a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" href="#">Link 4</a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" href="#">Link 5</a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" href="#">Link 6</a>
+                            </li>
+                        </ul>      
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-7 col-sm-8 col-12" > 
+                    <h5 id="contactUs">Contact us</h5>
+                    <hr>
+                    <p ><i class="fa-solid fa-location-dot text-secondary"></i><b> Address:</b><br> Green fields, Guntur, Vaddeswaram, Andhra Pradesh, India, pincode 502502</p>
+                    <p><i class="fa-solid fa-phone text-success"></i><b> Phone number:</b><br> +255 744 581 705 <br> +91 812 531 4802</p>
+                    <p><i class="fa-solid fa-envelope text-secondary"></i><b> Email:</b><br> manmust1998@gmail.com</p>
+
+                    <a class="btn my-1 btn-social-icon btn-secondary btn-sm" href="#"><span role="img" class="fa-brands fa-telegram" title="Telegram" style="font-size: 24px;"></span></a>
+                    
+                    <a class="btn my-1 btn-social-icon btn-success rounded-circl btn-sm" href="https://api.whatsapp.com/send/?phone=918125314802&text&app_absent=0" target="_blank"><span role="img" class="fa-brands fa-whatsapp text-light" title="Whatsapp" style="font-size: 24px;"></span></a>
+                    
+                    <a class="btn my-1 btn-social-icon btn-danger btn-sm" href="mailto:manmust1998@gmail.com"><span role="img" class="fa-solid fa-envelope" title="Gmail" style="font-size: 24px;"></span></a>                   
+                    
+                    <a class="btn my-1 btn-social-icon btn-dark btn-sm" href="#"><span role="img" class="fa-brands fa-github" title="Github" style="font-size: 24px;"></span></a>
+                     
+                    <a class="btn my-1 btn-social-icon btn-danger btn-sm" href="https://www.instagram.com/manmust1998/" target="_blank"><span role="img" class="fa-brands fa-instagram" title="instagram" style="font-size: 24px"></span></a>
+                     
+                    <a class="btn my-1 btn-social-icon btn-danger btn-sm" href="#"><span role="img" class="fa-brands fa-youtube" title="Youtube" style="font-size: 24px;"></span></a>
+                        
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <h5>Leave your comment</h5>
+            <hr>                                            
+            <form action="" method="post">{% csrf_token %}
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email" class="form-control" required>
+                
+                <label for="comment">Comment:</label><br>
+                <textarea name="comment" id="comment" cols="20" rows="5" class="form-control" required></textarea>
+                
+                <input style="Margin-top:10px; " type="button" id="send" name="send" value=" Send " class="btn btn-dark form-control">
+            </form>
+        </div>
+    </div>
+    <!-- last bottom-->
+    <div class="row bg-success">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:10px 0px 0px 0px">
+            <p class="text-center text-light">©Abuu Ibtisaam - <span id="currentYear"></span></p>
+        </div>        
+    </div> 
+    {% comment %} To get the current year {% endcomment %}
+    <script>
+        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+    </script> 

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} My Profile {% endblock %}
+{% load static %}
+{% block content %}
+<header>
+    {% include 'user_navbar.html' %}
+</header>
+<main>
+    <div class="row my-5">        
+        <div class="col-10 col-sm-8 col-md-6 col-lg-5 text-center bg-secodary mx-auto">
+            <h4>Update Profile Picture</h4><hr>
+            <div class="bg-secodary card">
+                <div class="card-body">
+                    <img class="card-img" 
+                    src="{% if user.profile_picture %}
+                    {{MEDIA_URL}}{{user.profile_picture.url}}
+                    {% else %}{% static 'images/male_avater.png' %}
+                    {% endif %}" 
+                    alt="Profile_picture">
+                    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                        {{form.profile_picture | as_crispy_field}}                            
+                        <input class="btn btn-primary btn-sm" type="submit" value="Upload">
+                        <a class="btn btn-secondary btn-sm" href="{% url 'user_profile' %}">Cancel</a>
+                    </form>                    
+                </div>                
+            </div>
+        </div>
+       
+    </div>
+</main>
+{% endblock content %}

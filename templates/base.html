@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'custom_css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <!-- Our project just needs Font Awesome Free's Solid and Brand files -->
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" >
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body class = "container-fluid body-bg">
+    <header>
+              
+    </header>    
+    {% block content %}{% endblock content %}     
+    {% block footer %}
+        {% include 'footer.html' %}
+    {% endblock footer %} 
+    <script src="{% static 'jquery/jquery-3.6.3.min.js' %}"></script>
+    <script src="{% static 'popper/popper.js' %}"></script> <!--for tooltips-->    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Our project just needs Font Awesome Free's Solid and Brand files -->
+    <script src="{% static 'fontawesomefree/js/fontawesome.js' %}"></script>
+    <script src="{% static 'fontawesomefree/js/solid.js' %}"></script>
+    <script src="{% static 'fontawesomefree/js/brands.js' %}"></script>
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>    
+</body>
+</html>

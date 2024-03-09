@@ -1,0 +1,103 @@
+.image-circle{
+    border-radius: 500px;
+}
+
+ul.errorlist{
+    list-style-type: none;
+}
+
+.bg-darkblue{
+    background-color:#33339F;
+}
+
+ul.m-0{
+    list-style-type: none;
+    text-align: center;
+}
+
+.neg-margin{
+    margin-top: -1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+.neg-margin2{
+    margin-top: -1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+.neg-margin-pwd-change{
+    margin-top: -1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.my-6{
+    margin-top: 5rem!important;
+    margin-bottom: 5rem!important;
+}
+
+.mt-6{
+    margin-top: 3.5rem!important;    
+}
+
+.mb-7{
+    margin-top: 7rem!important; 
+    
+}
+.mxx-0{
+    padding-left: 0%!important;
+    padding-right: 0%!important;
+}
+
+.my-7{
+    margin-top: 6rem!important;
+    margin-bottom: 6rem!important;
+}
+
+.my-8{
+    margin-top: 7rem!important;
+    margin-bottom: 7rem!important;
+}
+
+.btn-social-icon{
+    margin: 2px;
+    padding: 2x;
+    background-color: green;
+}
+
+.body-bg{
+    background-color: #f6f8fa;
+}
+
+.home_header{
+    background: linear-gradient( #e309a5ba,#06ef6f71), url(../images/debit_homepicture.jpg) no-repeat top center;       
+    min-height: 100vh;   
+    padding: 200px 0px; 
+    text-align: center;
+    background-size: cover;    
+}
+
+.home_header_mobile{
+    background: linear-gradient( #e309a5ba,#06ef6f71), url(../images/debit_homepicture_mobile.jpg) no-repeat top center;       
+    min-height: 100vh;   
+    padding: 200px 0px; 
+    text-align: center;
+    background-size: cover; 
+}
+
+.border-padding{
+    padding-top: 4px;
+    padding-bottom: 1px;
+    /* padding: 1px; */
+    border-radius: 5px;
+    background-color: #EFB9BD;
+}
+
+.border-r-3{
+    border-radius: 3px;
+}
+
+#hint_id_new_password1, #hint_id_password1{
+    display: none;
+}

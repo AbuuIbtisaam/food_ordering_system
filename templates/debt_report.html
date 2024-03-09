@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Debt Report{% endblock title %}
+
+{% block content %}
+    {% include 'user_navbar.html' %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'custom_css/debt_report.css' %}">
+    <h1>Download Report</h1>
+    <form action="{% url 'debtor_csv' %}" method="get">
+        {% csrf_token %}
+        
+        <label for="file_format">File Format:</label>
+        <select name="file_format" id="file_format">
+            <option value="csv">CSV</option>
+            <option value="pdf">PDF</option>
+        </select>
+
+        <label for="time_period">Time Period:</label>
+        <select name="time_period" id="time_period">
+            <option value="today">Today</option>
+            <option value="last_week">Last Week</option>
+            <option value="last_month">Last Month</option>
+            <option value="last_3_months">Last 3 Months</option>
+            <option value="last_6_months">Last 6 Months</option>
+            <option value="one_year">1 Year</option>
+            <option value="entire_history">Entire History Report</option>
+            <option value="custom">Custom</option> <!-- Added "Custom" option -->
+        </select>
+
+        <!-- Customization fields -->
+        <div id="custom_fields" style="display: none;">
+            <label for="start_date">Start Date:</label>
+            <input type="date" name="start_date" id="start_date">
+            <label for="end_date">End Date:</label>
+            <input type="date" name="end_date" id="end_date">
+        </div>
+
+        <button type="submit">Download Report</button>
+    </form>
+    <script src="{% static 'custom_js/debt_report.js' %}"></script>
+    <h1>Visual Report</h1>
+
+    
+{% endblock content %}

@@ -1,0 +1,138 @@
+{% load static %} {% comment %}
+<nav class="row navbar bg-secondary d-lg-none fixed-top">
+  <div class="container-fluid">
+    <ul></ul>
+    <div class="dropdown text-light">
+      {{user.username}}
+      <a
+        class="text-decoration-none"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        data-bs-offset="60,20"
+      >
+        <img
+          src="{% static 'images/male_avater.png' %}"
+          width="30"
+          height="30"
+          class="rounded-circle"
+        />
+      </a>
+
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Report</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li>
+          <a class="dropdown-item" href="{% url 'password_change' %}"
+            >Change Password</a
+          >
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="mb-3 d-lg-none text-center">...</div>
+{% endcomment %}
+<nav
+  class="py-2 row navbar navbar-expand-lg bg-success navbar-dark text-light"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">BREAVERS AUTO LTD</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'debtors_list' %}" class="nav-link">Debtors</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'credits_list' %}" class="nav-link">Credits</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'debts_list' %}" class="nav-link">Debts</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'creditors_list' %}" class="nav-link">Creditors</a>
+        </li>       
+        <li class="nav-item">
+          {% comment %} <a href="{% url 'summary_report' %}" class="nav-link">Report</a> {% endcomment %}
+          <a onclick="reportAlert()" href="#" class="nav-link">Report</a>
+        </li>
+        {% comment %}
+        <li class="nav-item">
+          <a href="{% url 'debt_status_list' %}" class="nav-link"
+            >Debt Status</a
+          >
+        </li>
+        {% endcomment %}
+        <li class="dropdown text-light d-block d-lg-none">
+          <a href="#" data-bs-toggle="dropdown" class="nav-link">Profile</a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Report</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+              <a class="dropdown-item" href="{% url 'password_change' %}"
+                >Change Password</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="dropdown d-none d-lg-block">
+        {{user.username}}
+        <a
+          class="text-decoration-none"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          data-bs-offset="60,20"
+        >
+          <img
+            src="{% if user.profile_picture %}{{MEDIA_URL}}{{user.profile_picture.url}}{% else %}{% static 'images/male_avater.png' %}{% endif %}" alt="Profile_picture"
+            width="40"
+            height="40"
+            class="rounded-circle"
+          />
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="{% url 'user_profile' %}">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Report</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li>
+            <a class="dropdown-item" href="{% url 'password_change' %}"
+              >Change Password</a
+            >
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+  function reportAlert() {
+    alert("Relax! This is upcoming feature. \nPlease keep exploring other functionalities");
+  }
+</script>
