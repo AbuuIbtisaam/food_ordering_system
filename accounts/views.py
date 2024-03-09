@@ -108,10 +108,3 @@ class TimezoneEditView(LoginRequiredMixin, UpdateView):
     template_name = "user_timezone_edit.html"
     success_url = reverse_lazy("user_profile")
 
-
-# I commented this out because I don't think it's necessary as it doesn't do anything
-# class LoginView(FormView):
-#     def get(self, request, *args, **kwargs):
-#         if self.request.user.is_authenticated:
-#             return redirect("dashboard")
-#         return super().get(request, *args, **kwargs)

@@ -16,7 +16,7 @@ class CustomUserCreationForm(UserCreationForm):
             "phone_number",
             "date_of_birth",
             "profile_picture",
-            # "time_zone",
+            "time_zone",
         )
         widgets = {"date_of_birth": forms.DateInput(attrs={"type": "date"})}
 
@@ -32,7 +32,7 @@ class CustomUserChangeForm(UserChangeForm):
             "phone_number",
             "date_of_birth",
             "profile_picture",
-            # "time_zone",
+            "time_zone",
         )
 
 
